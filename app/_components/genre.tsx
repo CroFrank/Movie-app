@@ -47,7 +47,7 @@ export default function Genre() {
       <div
         className={
           isOpenMenu
-            ? "origin-top-right absolute right-0 mt-2 w-inherit rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 ml-5 px-3"
+            ? "origin-top-right absolute right-0 mt-2 w-inherit rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 ml-5 px-3 z-20"
             : "hidden"
         }
       >

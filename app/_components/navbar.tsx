@@ -24,14 +24,17 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 py-5 z-50 w-full ${
+      className={`fixed top-0 p-5 z-50 w-full  ${
         scrolling ? "bg-slate-800" : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto flex items-center justify-between">
+      <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between">
         <div className="flex items-center">
-          <Link href="/" className="text-white font-bold text-2xl">
-            nKc & Fran Movies
+          <Link
+            href="/"
+            className="text-white font-bold text-4xl my-3 bg-black"
+          >
+            Movies
           </Link>
         </div>
         <div className="flex items-center space-x-4">

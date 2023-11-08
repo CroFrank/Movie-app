@@ -1,6 +1,5 @@
-"use client"
-
-import Filter from "./_components/filter"
+import Genre from "./_components/genre"
+import Lists from "./_components/lists"
 import { Movies } from "./_components/movies"
 
 export default function Home() {
@@ -13,7 +12,10 @@ export default function Home() {
       }}
     >
       <div className="container mx-auto p-4 bg-transparent pt-32">
-        <Filter />
+        <div className="h-1/12 bg-red flex flex-col items-center gap-2 sm:flex-row justify-between mt-5">
+          <Lists />
+          <Genre />
+        </div>
         <Movies />
       </div>
     </div>
