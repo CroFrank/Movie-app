@@ -1,7 +1,10 @@
-import { Params } from "next/dist/shared/lib/router/utils/route-matcher"
 import Image from "next/image"
 
-export default async function SpecificMovie({ params }: Params) {
+export default async function SpecificMovie({
+  params,
+}: {
+  params: { specificMovie: string }
+}) {
   const id = params
 
   const res = await fetch(`${process.env.API_PATH}api/movie`, {
