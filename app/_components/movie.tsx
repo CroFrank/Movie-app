@@ -13,7 +13,10 @@ interface Movie {
 export function Movie({ movie }: Movie) {
   console.log(movie)
   return (
-    <Link href={`/movie/${movie.id}`} className="w-48">
+    <Link
+      href={`https://movie-o9w5kwz3j-crofrank.vercel.app/movie/${movie.id}`}
+      className="w-48"
+    >
       <div className="relative rounded-sm h-72">
         <Image
           src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
