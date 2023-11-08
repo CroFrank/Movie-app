@@ -7,7 +7,7 @@ export default async function SpecificMovie({
 }) {
   const id = params
 
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_PATH}api/movie`, {
+  const res = await fetch(`${process.env.API_PATH}api/movie`, {
     method: "POST",
     headers: {
       "Content-Type": "text/plain",

@@ -1,4 +1,4 @@
-import Genre from "./_components/genre"
+import { Genres } from "./_components/genres"
 import Lists from "./_components/lists"
 import { Movies } from "./_components/movies"
 
@@ -14,7 +14,7 @@ export default function Home() {
       <div className="container mx-auto p-4 bg-transparent pt-32">
         <div className="h-1/12 bg-red flex flex-col items-center gap-2 sm:flex-row justify-between mt-5">
           <Lists />
-          <Genre />
+          <Genres />
         </div>
         <Movies />
       </div>

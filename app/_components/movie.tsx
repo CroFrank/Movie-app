@@ -11,7 +11,6 @@ interface Movie {
 }
 
 export function Movie({ movie }: Movie) {
-  console.log(movie)
   return (
     <Link href={`/movie/${movie.id}`} className="w-48">
       <div className="relative rounded-sm h-72">

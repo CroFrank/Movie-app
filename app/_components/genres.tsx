@@ -9,7 +9,7 @@ interface Genre {
   name: string
 }
 
-export default function Genre() {
+export function Genres() {
   const [genreList, setGenreList] = useState([])
   const [isOpenMenu, setIsOpenMenu] = useState(false)
 

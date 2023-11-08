@@ -19,7 +19,6 @@ export function Movies() {
         return res.json()
       })
       .then((popular) => {
-        console.log(popular)
         setPopularList(popular.results)
       })
       .catch((error) => {
