@@ -28,6 +28,7 @@ export default function Filter() {
         "Content-Type": "text/plain",
       },
       body: search,
+      mode: "cors",
     })
       .then((res) => {
         if (!res.ok) {
