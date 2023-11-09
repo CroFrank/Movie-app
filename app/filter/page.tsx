@@ -26,12 +26,8 @@ export default function Filter() {
       method: "POST",
       headers: {
         "Content-Type": "text/plain",
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
-        "Access-Control-Allow-Headers": "Content-Type, Authorization",
       },
       body: search,
-      mode: "cors",
     })
       .then((res) => {
         if (!res.ok) {
