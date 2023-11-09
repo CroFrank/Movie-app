@@ -22,7 +22,7 @@ export function Movie({ movie }: Movie) {
           height={300}
         />
         <span className="absolute top-3 right-4 bg-black p-1 rounded-full text-white z-10">
-          {movie.vote_average}
+          {parseFloat(movie.vote_average).toFixed(1)}
         </span>
       </div>
       <div className=" rounded-b-md h-20 bg-red-900 flex items-center justify-center text-white font-semibold">

@@ -1,54 +1,6 @@
 import Lists from "@/app/_components/lists"
-import { Movie } from "@/app/_components/movie"
 import { Genres } from "../../_components/genres"
-
-// export default function Genre({ params }) {
-//   const [movieList, setMovieList] = useState([])
-
-//   useEffect(() => {
-//     axios
-//       .get("https://api.themoviedb.org/3/trending/movie/week?language=en-US", {
-//         headers: {
-//           Authorization:
-//             "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlMDY0N2RlOGJjOTdiNDQzMDJhMzQ4M2IzNzY0YzczMSIsInN1YiI6IjY1NDBmMjA2MzNhNTMzMDBhYzFlZWZjNiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.0kFuR0q-353Vtm_1STC9oXfZDT_qi8wanHsURC3edtA",
-//         },
-//       })
-//       .then((res) => {
-//         console.log(res)
-//         setMovieList(res.data.results)
-//       })
-//       .catch((error) => {
-//         console.log(error)
-//       })
-//   }, [])
-
-//   return (
-//     <div className="home-container">
-//       <div className="genres">
-//         <h1>Here is a list of movie out in Theaters!</h1>
-//         <div className="genre-container">
-//           {movieList.map((movie, index) =>
-//             movie.genre_ids.includes(+params.slug) ? (
-//               <div className="genre-card" key={index}>
-//                 <Link href={`/movie/${movie.original_title}`}>
-//                   {movie.original_title}
-//                 </Link>
-//               </div>
-//             ) : (
-//               console.log("No movies found in this genre")
-//             )
-//           )}
-//         </div>
-//       </div>
-//     </div>
-//   )
-// }
-interface Movie {
-  title: string
-  poster_path: string
-  vote_average: string
-  id: string
-}
+import { Movies } from "@/app/_components/movies"
 
 export default async function Genre({ params }: { params: { id: string } }) {
   const res = await fetch(`${process.env.API_PATH}api/genre`)
@@ -82,17 +34,13 @@ export default async function Genre({ params }: { params: { id: string } }) {
           <Lists />
           <Genres />
         </div>
-        <div className="grid place-items-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 mt-16">
-          {filtered.length < 1 ? (
-            <p className="text-red-500 text-2xl text-center">
-              No movies in that genre
-            </p>
-          ) : (
-            filtered.map((movie: Movie, index: number) => {
-              return <Movie key={index} movie={movie} />
-            })
-          )}
-        </div>
+        {filtered.length < 1 ? (
+          <p className="text-red-500 text-2xl text-center mt-7">
+            No movies in that genre
+          </p>
+        ) : (
+          <Movies movies={filtered} />
+        )}
       </div>
     </div>
   )

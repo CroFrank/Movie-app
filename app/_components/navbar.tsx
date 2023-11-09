@@ -30,10 +30,7 @@ export default function Navbar() {
     >
       <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between">
         <div className="flex items-center">
-          <Link
-            href="/"
-            className="text-white font-bold text-4xl my-3 bg-black"
-          >
+          <Link href="/" className="text-white font-bold text-4xl my-3">
             Movies
           </Link>
         </div>

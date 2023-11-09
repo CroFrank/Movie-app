@@ -2,7 +2,21 @@ import { Genres } from "./_components/genres"
 import Lists from "./_components/lists"
 import { Movies } from "./_components/movies"
 
-export default function Home() {
+export default async function Home() {
+  const res = await fetch(`${process.env.API_PATH}api/popular`)
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error("No data was fetched")
+      }
+      return res.json()
+    })
+    .then((movie) => {
+      return movie
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+
   return (
     <div
       className="min-h-screen bg-fixed bg-cover bg-no-repeat md:bg-contain xl:bg-cover"
@@ -16,7 +30,7 @@ export default function Home() {
           <Lists />
           <Genres />
         </div>
-        <Movies />
+        <Movies movies={res.results} />
       </div>
     </div>
   )

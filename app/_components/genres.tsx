@@ -47,7 +47,7 @@ export function Genres() {
       <div
         className={
           isOpenMenu
-            ? "origin-top-right absolute right-0 mt-2 w-inherit rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 ml-5 px-3 z-20"
+            ? "origin-top-right absolute right-0 mt-2 w-inherit rounded-md shadow-lg bg-yellow-500 ring-1 ring-black ring-opacity-5 ml-5 px-3 z-20"
             : "hidden"
         }
       >
@@ -58,7 +58,11 @@ export function Genres() {
           aria-labelledby="options-menu"
         >
           {genreList.map((genre: Genre, index) => (
-            <Link key={index} href={`/genre/${genre.id}`} className="block">
+            <Link
+              key={index}
+              href={`/genre/${genre.id}`}
+              className="block py-1 font-semibold"
+            >
               {genre.name}
             </Link>
           ))}
